@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+  <defs>
+    <style>
+      .wheel-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; fill: #3a1c4e; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+  <g transform="translate(180, 180)">
+  <path d="M 0 0 L 172.0 0.0 A 172 172 0 0 1 86.0 149.0 Z" fill="#dfccfc" stroke="#ffffff" stroke-width="3" />
+  <g transform="translate(95.3, 55.0) rotate(120.0)">
+    <text x="0" y="-16.5" class="wheel-text">it's you.</text>
+    <text x="0" y="0.0" class="wheel-text">it will</text>
+    <text x="0" y="16.5" class="wheel-text">always be</text>
+  </g>
+  <path d="M 0 0 L 86.0 149.0 A 172 172 0 0 1 -86.0 149.0 Z" fill="#ffd5e1" stroke="#ffffff" stroke-width="3" />
+  <g transform="translate(0.0, 110.0) rotate(180.0)">
+    <text x="0" y="-16.5" class="wheel-text">being with</text>
+    <text x="0" y="0.0" class="wheel-text">you feels</text>
+    <text x="0" y="16.5" class="wheel-text">like home</text>
+  </g>
+  <path d="M 0 0 L -86.0 149.0 A 172 172 0 0 1 -172.0 0.0 Z" fill="#dfccfc" stroke="#ffffff" stroke-width="3" />
+  <g transform="translate(-95.3, 55.0) rotate(240.0)">
+    <text x="0" y="-16.5" class="wheel-text">your laugh</text>
+    <text x="0" y="0.0" class="wheel-text">is my</text>
+    <text x="0" y="16.5" class="wheel-text">favourite</text>
+  </g>
+  <path d="M 0 0 L -172.0 0.0 A 172 172 0 0 1 -86.0 -149.0 Z" fill="#ffd5e1" stroke="#ffffff" stroke-width="3" />
+  <g transform="translate(-95.3, -55.0) rotate(300.0)">
+    <text x="0" y="-16.5" class="wheel-text">you turn</text>
+    <text x="0" y="0.0" class="wheel-text">small</text>
+    <text x="0" y="16.5" class="wheel-text">moments</text>
+  </g>
+  <path d="M 0 0 L -86.0 -149.0 A 172 172 0 0 1 86.0 -149.0 Z" fill="#dfccfc" stroke="#ffffff" stroke-width="3" />
+  <g transform="translate(-0.0, -110.0) rotate(360.0)">
+    <text x="0" y="-16.5" class="wheel-text">you're my</text>
+    <text x="0" y="0.0" class="wheel-text">quiet and</text>
+    <text x="0" y="16.5" class="wheel-text">my happy</text>
+  </g>
+  <path d="M 0 0 L 86.0 -149.0 A 172 172 0 0 1 172.0 -0.0 Z" fill="#ffd5e1" stroke="#ffffff" stroke-width="3" />
+  <g transform="translate(95.3, -55.0) rotate(420.0)">
+    <text x="0" y="-16.5" class="wheel-text">you make me</text>
+    <text x="0" y="0.0" class="wheel-text">want to be</text>
+    <text x="0" y="16.5" class="wheel-text">better</text>
+  </g>
+  <circle cx="0" cy="0" r="172" fill="none" stroke="#ffffff" stroke-width="6" />
+  <circle cx="0" cy="0" r="30" fill="#ffffff" stroke="#ea708e" stroke-width="3" />
+  <text x="0" y="2" font-size="18" fill="#e63946" text-anchor="middle" dominant-baseline="middle">♡</text>
+</g>
+</svg>

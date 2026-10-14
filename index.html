@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Hi, Jaaanu 🤍 | Happy Birthday</title>
+    <meta name="description" content="I have done something special for you Because tum bahot special ho mere lie" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-DTOJ_gGn.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BneMQetN.css">
+  </head>
+  <body>
+    <!-- Floating Petal Breeze & Fairy Lights Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Top Floating Toolbar (Private Space, Music & Personalize) -->
+    <div class="top-floating-bar" id="top-floating-bar">
+      <button id="btn-top-vault" class="pill-chip-btn btn-vault" title="Our Private Space" aria-label="Our Private Space">
+        <span class="vault-icon">🔒</span>
+        <span class="chip-text">Private Space</span>
+      </button>
+      <button id="btn-top-music" class="pill-chip-btn" title="Toggle Music" aria-label="Toggle Music">
+        <span class="music-icon">🎵</span>
+        <span class="chip-text" id="music-chip-text">Music</span>
+      </button>
+      <button id="btn-top-sfx" class="pill-chip-btn" title="Toggle Sound" aria-label="Toggle Sound">
+        <span class="sfx-icon">🔊</span>
+      </button>
+      <button id="btn-top-edit" class="pill-chip-btn btn-edit" title="Personalize Photos & Text" aria-label="Personalize">
+        <span class="edit-icon">✏️</span>
+      </button>
+    </div>
+
+    <!-- Main Mobile Frame Container -->
+    <div class="mobile-viewport-container">
+      
+      <!-- ==================== PAGE 0: BIRTHDAY PASSCODE LOCK ==================== -->
+      <section class="page-screen active" id="page-lock">
+        <div class="page-inner text-center lock-page-inner">
+          
+          <div class="pill-badge">
+            <span class="badge-heart">🔒</span>
+            <span class="badge-text">SECRET SURPRISE FOR JAAANU</span>
+          </div>
+
+          <!-- Cute Animated Heart Padlock -->
+          <div class="lock-visual-container">
+            <div class="lock-icon-wrapper" id="lock-icon-wrapper">
+              <svg class="heart-padlock-svg" viewBox="0 0 100 120" width="76" height="92" aria-hidden="true">
+                <defs>
+                  <linearGradient id="lock-body-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ff9ebb" />
+                    <stop offset="50%" stop-color="#ff758f" />
+                    <stop offset="100%" stop-color="#e63946" />
+                  </linearGradient>
+                  <linearGradient id="shackle-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#cf9838" />
+                    <stop offset="40%" stop-color="#ffd56b" />
+                    <stop offset="100%" stop-color="#cf9838" />
+                  </linearGradient>
+                </defs>
+                <!-- Shackle (unlocks upwards & swings) -->
+                <path id="padlock-shackle" class="padlock-shackle" d="M 32 50 V 28 C 32 12 68 12 68 28 V 50" fill="none" stroke="url(#shackle-gold)" stroke-width="8.5" stroke-linecap="round" />
+                <!-- Lock Body -->
+                <rect x="16" y="44" width="68" height="64" rx="20" fill="url(#lock-body-grad)" filter="drop-shadow(0 8px 20px rgba(230, 57, 70, 0.35))" />
+                <!-- White Heart Emblem -->
+                <path d="M 50 84 C 41 74 35 67 35 60 C 35 53 40 48 46 48 C 49 48 50 50 50 52 C 50 50 51 48 54 48 C 60 48 65 53 65 60 C 65 67 59 74 50 84 Z" fill="#ffffff" />
+                <!-- Keyhole -->
+                <circle cx="50" cy="63" r="3.2" fill="#8c1127" />
+                <polygon points="48.5,64 51.5,64 52.8,74 47.2,74" fill="#8c1127" />
+              </svg>
+              <div class="lock-sparkles" id="lock-sparkles">✨💖✨</div>
+            </div>
+          </div>
+
+          <h1 class="main-heading lock-heading">
+            Only For Jaaanu <span class="title-heart">🤍</span>
+          </h1>
+
+          <p class="cursive-subtitle lock-subtitle">
+            Enter your birthday to unlock your surprise ♡
+          </p>
+
+          <!-- 8-Digit Passcode Display (DD / MM / YYYY) -->
+          <div class="passcode-container" id="passcode-container">
+            <input 
+              type="tel" 
+              id="hidden-passcode-input" 
+              class="hidden-passcode-input" 
+              maxlength="8" 
+              pattern="[0-9]*" 
+              inputmode="numeric" 
+              autocomplete="off"
+              aria-label="Enter Birthday Passcode (DDMMYYYY)"
+            />
+            
+            <div class="passcode-slots-wrapper" id="passcode-slots-wrapper" role="button" tabindex="0" title="Click or tap to type passcode">
+              <!-- DD -->
+              <div class="pin-digit-slot" data-index="0"><span class="pin-digit"></span></div>
+              <div class="pin-digit-slot" data-index="1"><span class="pin-digit"></span></div>
+              <span class="pin-divider">/</span>
+              <!-- MM -->
+              <div class="pin-digit-slot" data-index="2"><span class="pin-digit"></span></div>
+              <div class="pin-digit-slot" data-index="3"><span class="pin-digit"></span></div>
+              <span class="pin-divider">/</span>
+              <!-- YYYY -->
+              <div class="pin-digit-slot" data-index="4"><span class="pin-digit"></span></div>
+              <div class="pin-digit-slot" data-index="5"><span class="pin-digit"></span></div>
+              <div class="pin-digit-slot" data-index="6"><span class="pin-digit"></span></div>
+              <div class="pin-digit-slot" data-index="7"><span class="pin-digit"></span></div>
+            </div>
+
+            <div class="passcode-format-labels">
+              <span>DD</span>
+              <span>MM</span>
+              <span>YYYY</span>
+            </div>
+
+            <div class="passcode-feedback" id="passcode-feedback"></div>
+          </div>
+
+          <!-- Aesthetic Pastel On-Screen Dial Pad -->
+          <div class="dialpad-grid" id="dialpad-grid">
+            <button class="dial-btn" data-key="1" type="button">1</button>
+            <button class="dial-btn" data-key="2" type="button">2</button>
+            <button class="dial-btn" data-key="3" type="button">3</button>
+            <button class="dial-btn" data-key="4" type="button">4</button>
+            <button class="dial-btn" data-key="5" type="button">5</button>
+            <button class="dial-btn" data-key="6" type="button">6</button>
+            <button class="dial-btn" data-key="7" type="button">7</button>
+            <button class="dial-btn" data-key="8" type="button">8</button>
+            <button class="dial-btn" data-key="9" type="button">9</button>
+            <button class="dial-btn dial-btn-action" data-key="clear" type="button" title="Clear">C</button>
+            <button class="dial-btn" data-key="0" type="button">0</button>
+            <button class="dial-btn dial-btn-action" data-key="backspace" type="button" title="Delete">⌫</button>
+          </div>
+
+          <!-- Unlock Action Button -->
+          <div class="lock-actions-row">
+            <button class="btn-gradient-pill btn-unlock-passcode" id="btn-unlock-passcode" type="button">
+              <span>UNLOCK SURPRISE ♡</span>
+            </button>
+          </div>
+
+          <!-- Sweet Hint Area -->
+          <div class="lock-hint-area">
+            <button class="btn-hint-toggle" id="btn-passcode-hint" type="button">
+              <span>💡 Need a hint?</span>
+            </button>
+            <p class="lock-hint-text hidden" id="lock-hint-text">
+              The day the prettiest girl in the world was born: <strong>15 / 10 / 2002</strong> 🌸
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== PAGE 1: ENVELOPE (Reference Image 1) ==================== -->
+      <section class="page-screen" id="page-envelope">
+        <div class="page-inner text-center">
+          
+          <div class="pill-badge">
+            <span class="badge-heart">💖</span>
+            <span class="badge-text">HAPPY BIRTHDAY, JAAANU</span>
+          </div>
+
+          <h1 class="main-heading">
+            Hi, <span class="gf-name-display">Jaaanu</span> <span class="title-heart">🤍</span>
+          </h1>
+
+          <p class="cursive-subtitle" id="envelope-subtitle">
+            I have done something special for you<br />
+            Because tum bahot special ho mere lie ♡
+          </p>
+
+          <!-- Sticker Illustrated Envelope with Opening Flap & Sliding Letter -->
+          <div class="envelope-sticker-wrapper">
+            <div class="envelope-box" id="envelope-interactive-box" role="button" tabindex="0" title="Click to open letter">
+              <!-- Inside back lining -->
+              <div class="envelope-inside-back"></div>
+
+              <!-- Folded letter sheet tucked inside that slides up when opening -->
+              <div class="envelope-letter-paper" id="envelope-letter-paper">
+                <div class="mini-letter-lines">
+                  <div class="mini-line title-line"></div>
+                  <div class="mini-line body-line"></div>
+                  <div class="mini-line body-line"></div>
+                  <div class="mini-line body-line short"></div>
+                  <div class="mini-heart-stamp">♡</div>
+                </div>
+              </div>
+
+              <!-- Front pocket folds covering the bottom of the letter -->
+              <div class="envelope-front-pocket"></div>
+
+              <!-- Top triangular flap (flips 180deg open upwards) -->
+              <div class="envelope-top-lid" id="envelope-top-lid"></div>
+
+              <!-- Heart wax seal with monogram S (pops off on open) -->
+              <div class="envelope-heart-seal" id="envelope-heart-seal">
+                <span class="seal-initial">S</span>
+              </div>
+            </div>
+            
+            <button class="open-it-btn" id="btn-open-envelope">
+              <span>OPEN IT ♡</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== PAGE 1.5: THE UNROLLED LETTER ==================== -->
+      <section class="page-screen" id="page-letter">
+        <div class="page-inner text-center">
+          <button class="round-nav-btn btn-back" id="btn-back-from-letter" aria-label="Back">
+            <span>←</span>
+          </button>
+
+          <div class="pill-badge">
+            <span class="badge-heart">💖</span>
+            <span class="badge-text">A LETTER FOR YOU</span>
+          </div>
+
+          <h2 class="main-heading">
+            to my favourite person <span class="title-heart">♡</span>
+          </h2>
+
+          <div class="letter-card-sheet">
+            <div class="sheet-tape"></div>
+            <div class="letter-text-body" id="letter-text-body">
+              <!-- Injected via JS -->
+            </div>
+            <div class="letter-footer-sign">
+              <span class="sign-text" id="letter-sender-sign">Forever Yours ♡</span>
+            </div>
+          </div>
+
+          <div class="page-action-row">
+            <button class="btn-gradient-pill" id="btn-goto-photos">
+              <span>See My Favourite Photos Of You 📸</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PAGE 2: PHOTO CAROUSEL (Reference Image 2) ==================== -->
+      <section class="page-screen" id="page-photos">
+        <div class="page-inner text-center">
+          
+          <button class="round-nav-btn btn-back" id="btn-back-from-photos" aria-label="Back">
+            <span>←</span>
+          </button>
+
+          <!-- Photo Mode Switcher (Aesthetic Queen vs Goofy & Memes) -->
+          <div class="photo-mode-switcher-container">
+            <div class="photo-mode-switcher" role="tablist">
+              <button type="button" class="mode-switch-btn active" id="btn-mode-aesthetic" role="tab" aria-selected="true">
+                <span class="mode-icon">🌸</span>
+                <span class="mode-title">Aesthetic Queen</span>
+              </button>
+              <button type="button" class="mode-switch-btn" id="btn-mode-goofy" role="tab" aria-selected="false">
+                <span class="mode-icon">🤪</span>
+                <span class="mode-title">Goofy & Memes</span>
+                <span class="mode-sparkle-badge">NEW</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="cursive-eyebrow" id="photo-section-eyebrow">
+            my favourite pictures of you, <span class="gf-name-display">Jaaanu</span>
+          </p>
+
+          <div class="pill-badge" id="photo-section-badge">
+            <span class="badge-heart" id="photo-badge-icon">💖</span>
+            <span class="badge-text" id="photo-badge-text">MY FAVOURITE GIRL</span>
+          </div>
+
+          <h2 class="main-heading" id="photo-section-heading">
+            every version of you, my favourite
+          </h2>
+
+          <p class="sub-italic-note" id="photo-section-sub">
+            every picture reminds me how lucky I am ♡
+          </p>
+
+          <!-- Layered Polaroid Card with Striped Tape & Corner Flowers -->
+          <div class="polaroid-carousel-container">
+            <!-- Left Arrow -->
+            <button class="round-nav-btn arrow-prev" id="btn-photo-prev" aria-label="Previous Photo">
+              <span>←</span>
+            </button>
+
+            <!-- Card Frame -->
+            <div class="carousel-card-box" id="carousel-card-box">
+              <div class="striped-top-tape" id="carousel-top-tape"></div>
+              <span class="flower-sticker top-left" id="flower-sticker-tl">🌸</span>
+              <span class="flower-sticker bottom-right" id="flower-sticker-br">🌷</span>
+
+              <!-- Meme Tag Badge for Goofy Mode -->
+              <div class="carousel-tag-badge hidden" id="carousel-tag-badge">
+                <span id="carousel-tag-text">Hangry Goblin 🍕</span>
+              </div>
+
+              <!-- Interactive Comic Tap Overlay -->
+              <div class="comic-stamp-overlay hidden" id="comic-stamp-overlay">
+                <span class="comic-stamp-text" id="comic-stamp-text">100% DRAMA QUEEN 👑</span>
+              </div>
+
+              <div class="carousel-image-frame" id="carousel-image-frame" role="button" tabindex="0" title="Tap photo for silly reactions!">
+                <img src="/images/sunset_cafe.jpg" alt="Memory of Jaaanu" id="carousel-img" />
+              </div>
+
+              <div class="carousel-caption-area">
+                <div class="carousel-counter" id="carousel-counter">01 / 04</div>
+                <p class="carousel-caption-text" id="carousel-caption-text">
+                  this is the face I think about all day.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Arrow -->
+            <button class="round-nav-btn arrow-next" id="btn-photo-next" aria-label="Next Photo">
+              <span>→</span>
+            </button>
+          </div>
+
+          <!-- Carousel Dots Pagination Indicator -->
+          <div class="carousel-dots-indicator" id="carousel-dots-indicator"></div>
+
+          <div class="page-action-row">
+            <button class="btn-gradient-pill" id="btn-goto-cake">
+              <span>Time For Your Birthday Cake 🎂</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== PAGE 3: BIRTHDAY CAKE & MAKE A WISH ==================== -->
+      <section class="page-screen" id="page-cake">
+        <div class="page-inner text-center">
+          
+          <button class="round-nav-btn btn-back" id="btn-back-from-cake" aria-label="Back">
+            <span>←</span>
+          </button>
+
+          <div class="pill-badge">
+            <span class="badge-heart">💖</span>
+            <span class="badge-text">MAKE A WISH</span>
+          </div>
+
+          <h2 class="main-heading">
+            your birthday cake, <span class="gf-name-display">Jaaanu</span>! 🎂
+          </h2>
+
+          <p class="sub-italic-note">
+            close your eyes, make a sweet wish, and blow out the candles ♡
+          </p>
+
+          <!-- Layered Pastel Cake -->
+          <div class="clean-cake-wrapper">
+            <div class="cake-topper-pill">
+              <span>Happy Birthday Jaaanu 🌸</span>
+            </div>
+
+            <div class="candles-row" id="candles-row">
+              <div class="single-candle" data-candle="1">
+                <div class="candle-flame" id="flame-1"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-body pink-stripe"></div>
+              </div>
+              <div class="single-candle" data-candle="2">
+                <div class="candle-flame" id="flame-2"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-body purple-stripe"></div>
+              </div>
+              <div class="single-candle" data-candle="3">
+                <div class="candle-flame" id="flame-3"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-body gold-stripe"></div>
+              </div>
+              <div class="single-candle" data-candle="4">
+                <div class="candle-flame" id="flame-4"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-body purple-stripe"></div>
+              </div>
+              <div class="single-candle" data-candle="5">
+                <div class="candle-flame" id="flame-5"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-body pink-stripe"></div>
+              </div>
+            </div>
+
+            <div class="tier tier-top">
+              <div class="frosting-layer"></div>
+              <div class="fruit-toppings">🍓 🌸 🫐 🌸 🍓</div>
+            </div>
+            <div class="tier tier-mid">
+              <div class="cake-motto">made with pure love 💕</div>
+            </div>
+            <div class="tier tier-bottom">
+              <div class="plate-base"></div>
+            </div>
+          </div>
+
+          <div class="cake-control-buttons">
+            <button class="btn-gradient-pill" id="btn-blow-candles">
+              <span>💨 Blow Out The Candles!</span>
+            </button>
+            <button class="btn-light-chip hidden" id="btn-relight-candles">
+              <span>🕯️ Relight Candles</span>
+            </button>
+          </div>
+
+          <!-- Blessing Note -->
+          <div class="cake-blessing-card hidden" id="cake-blessing-card">
+            <div class="blessing-hearts">💖 🌸 ✨</div>
+            <h3>may every wish come true</h3>
+            <p id="cake-blessing-text">
+              Meri IAS Vanshika aage wala saal bahot bahot saara happiness, success and Paisa laaye 😂<br />
+              Mai hamesha tumhare saath khada rahuga ❤️
+            </p>
+            <button class="btn-gradient-pill" id="btn-goto-balloon">
+              <span>Next: Pop My Heart For You 💘</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== PAGE 3.5: CUPID'S BOW & HEART BALLOON GAME ==================== -->
+      <section class="page-screen" id="page-balloon">
+        <div class="page-inner text-center">
+          
+          <button class="round-nav-btn btn-back" id="btn-back-from-balloon" aria-label="Back">
+            <span>←</span>
+          </button>
+
+          <div class="pill-badge">
+            <span class="badge-heart">💘</span>
+            <span class="badge-text">CUPID'S ARROW</span>
+          </div>
+
+          <h2 class="main-heading">
+            pop my heart, <span class="gf-name-display">Jaaanu</span> 🎈
+          </h2>
+
+          <p class="sub-italic-note">
+            click the arrow, drag backwards to aim, and release to shoot ♡
+          </p>
+
+          <!-- Interactive Balloon Pop Game Arena with Drag & Release Physics -->
+          <div class="balloon-arena-wrapper" id="balloon-arena">
+            <svg id="cupid-game-svg" viewBox="0 0 320 380" width="320" height="380" class="cupid-game-svg">
+              <defs>
+                <!-- Heart balloon radial gradient -->
+                <radialGradient id="balloon-grad" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#ff99b0" />
+                  <stop offset="35%" stop-color="#ff3366" />
+                  <stop offset="80%" stop-color="#d90429" />
+                  <stop offset="100%" stop-color="#9b0020" />
+                </radialGradient>
+                <!-- Balloon glow shadow -->
+                <filter id="balloon-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="rgba(217, 4, 41, 0.35)" />
+                </filter>
+                <!-- Bow gold gradient -->
+                <linearGradient id="bow-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#cf9838" />
+                  <stop offset="30%" stop-color="#ffd56b" />
+                  <stop offset="50%" stop-color="#fff2a8" />
+                  <stop offset="70%" stop-color="#ffd56b" />
+                  <stop offset="100%" stop-color="#cf9838" />
+                </linearGradient>
+                <!-- Arrow gold gradient -->
+                <linearGradient id="arrow-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffd56b" />
+                  <stop offset="100%" stop-color="#c98a28" />
+                </linearGradient>
+              </defs>
+
+              <!-- Aim Trajectory Guide Line (visible when dragging) -->
+              <line id="svg-aim-line" x1="160" y1="275" x2="160" y2="105" stroke="#ff758f" stroke-width="2.5" stroke-dasharray="5 5" opacity="0" />
+
+              <!-- Floating Heart Balloon Target (Center: 160, 75) -->
+              <g id="svg-balloon-target" class="svg-balloon-group" cursor="pointer">
+                <!-- Heart Balloon Body -->
+                <path id="svg-balloon-shape" d="M 160 115 C 120 85 100 68 100 48 C 100 28 116 16 134 16 C 145 16 155 21 160 28 C 165 21 175 16 186 16 C 204 16 220 28 220 48 C 220 68 200 85 160 115 Z" fill="url(#balloon-grad)" filter="url(#balloon-shadow)" />
+                <!-- Specular Highlight -->
+                <ellipse cx="132" cy="36" rx="14" ry="7" transform="rotate(-30 132 36)" fill="rgba(255, 255, 255, 0.45)" />
+                <!-- Center Sticker -->
+                <text x="160" y="68" font-size="18" text-anchor="middle" dominant-baseline="middle">💖</text>
+                <!-- Balloon Knot -->
+                <polygon points="155,115 165,115 160,121" fill="#b80c2e" />
+                <!-- Dangling Ribbon String -->
+                <path d="M 160 121 Q 153 135 164 148 T 160 168" fill="none" stroke="rgba(201, 24, 74, 0.5)" stroke-width="2" stroke-linecap="round"/>
+              </g>
+
+              <!-- Cupid Bow Structure -->
+              <g id="svg-bow-limbs">
+                <path id="svg-bow-arc" d="M 65 275 Q 160 228 255 275" fill="none" stroke="url(#bow-gold)" stroke-width="6" stroke-linecap="round" />
+                <path d="M 65 275 Q 160 231 255 275" fill="none" stroke="#fffbe0" stroke-width="2" stroke-linecap="round" />
+                <!-- Bow tips -->
+                <circle cx="65" cy="275" r="4.5" fill="#e5aa3a" />
+                <circle cx="255" cy="275" r="4.5" fill="#e5aa3a" />
+              </g>
+
+              <!-- Bow String (Dynamically bends with nock point) -->
+              <path id="svg-bow-string" d="M 65 275 L 160 275 L 255 275" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+              <!-- Cupid Arrow (Nocked at 160, 275) -->
+              <g id="svg-arrow-group" transform="translate(160, 275)">
+                <!-- Arrow Heart Tip -->
+                <path d="M 0 -78 C -6 -84 -11 -80 -11 -74 C -11 -68 0 -58 0 -58 C 0 -58 11 -68 11 -74 C 11 -80 6 -84 0 -78 Z" fill="#ff1744" filter="drop-shadow(0 2px 4px rgba(255,23,68,0.5))" />
+                <!-- Arrow Golden Shaft -->
+                <line x1="0" y1="-60" x2="0" y2="0" stroke="url(#arrow-gold)" stroke-width="3.5" stroke-linecap="round" />
+                <!-- Feather Fletching at Tail -->
+                <path d="M -7 -4 L 0 0 L 7 -4 L 7 -12 L 0 -8 L -7 -12 Z" fill="#ff758f" />
+                <line x1="0" y1="-14" x2="0" y2="0" stroke="#ff4d6d" stroke-width="2" />
+                <!-- Sparkle -->
+                <text x="0" y="-35" font-size="10" text-anchor="middle" dominant-baseline="middle">✨</text>
+              </g>
+
+              <!-- Interactive Drag Handle Zone -->
+              <g id="svg-drag-zone" cursor="grab" title="Click & drag backwards">
+                <circle id="svg-drag-circle" cx="160" cy="275" r="42" fill="rgba(255, 77, 109, 0.08)" stroke="#ff4d6d" stroke-width="2" stroke-dasharray="4 4" />
+                <circle cx="160" cy="275" r="8" fill="#ff4d6d" opacity="0.6" />
+              </g>
+            </svg>
+
+            <!-- Drag Hint / Tension Status Badge -->
+            <div class="drag-hint-pill" id="drag-hint-pill">
+              <span class="hint-icon">🏹</span>
+              <span class="hint-text" id="drag-hint-text">Drag arrow downwards to pull back & release</span>
+            </div>
+
+            <!-- Accessible Trigger Button -->
+            <div class="balloon-controls-row">
+              <button class="btn-gradient-pill btn-shoot-arrow" id="btn-shoot-arrow">
+                <span>🎯 PULL & SHOOT ARROW</span>
+              </button>
+            </div>
+
+            <!-- Popped Secret Message Card (Revealed after Pop) -->
+            <div class="balloon-unfolded-card hidden" id="balloon-unfolded-card">
+              <div class="balloon-card-sparkles">✨ 💖 ✨</div>
+              <h3 class="balloon-card-title">You Burst My Heart!</h3>
+              <p class="balloon-card-text" id="balloon-secret-text">
+                You popped my heart, Jaaanu! 💖<br />
+                Every single beat belongs to you, today and forever. Happy Birthday my Cutieee ♡
+              </p>
+              <div class="balloon-card-buttons">
+                <button class="btn-light-chip" id="btn-replay-balloon">
+                  <span>Shoot Again ↺</span>
+                </button>
+                <button class="btn-gradient-pill" id="btn-goto-jar">
+                  <span>Next: Little Notes In A Jar 🫙</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== PAGE 3.8: LITTLE NOTES I KEPT FOR YOU (THE GLASS JAR) ==================== -->
+      <section class="page-screen" id="page-jar">
+        <div class="page-inner text-center jar-page-inner">
+          
+          <div class="jar-header-section">
+            <p class="jar-header-sub">LITTLE NOTES I KEPT FOR YOU</p>
+            <h2 class="jar-header-title">Pick One Out</h2>
+          </div>
+
+          <!-- Glass Jar Visual Assembly -->
+          <div class="glass-jar-display" id="glass-jar-display" role="button" tabindex="0" title="Tap the jar to open">
+            <!-- Wooden Cork Lid -->
+            <div class="jar-cork-lid" id="jar-cork-lid">
+              <div class="cork-grooves"></div>
+            </div>
+            
+            <!-- Soft Pink Silicone Collar Ribbon -->
+            <div class="jar-collar-ribbon"></div>
+
+            <!-- Realistic Glass Body -->
+            <div class="jar-glass-body">
+              <div class="glass-specular-left"></div>
+              <div class="glass-specular-right"></div>
+              
+              <!-- Folded Paper Chits Inside Jar Before Opening -->
+              <div class="inside-chits-container" id="inside-chits-container">
+                <div class="mini-chit inside-pink"></div>
+                <div class="mini-chit inside-peach"></div>
+                <div class="mini-chit inside-yellow"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instruction Subtitle -->
+          <p class="jar-instruction-text" id="jar-instruction">tap the jar</p>
+
+          <!-- The 3 Folded Chits Tray (Slides Down When Jar Opens) -->
+          <div class="chits-slider-tray hidden" id="chits-slider-tray">
+            <button class="folded-chit-btn chit-pink" data-chit="0" aria-label="Open Pink Love Note">
+              <div class="chit-crease-line"></div>
+              <div class="chit-crease-line"></div>
+            </button>
+            <button class="folded-chit-btn chit-peach" data-chit="1" aria-label="Open Peach Love Note">
+              <div class="chit-crease-line"></div>
+              <div class="chit-crease-line"></div>
+            </button>
+            <button class="folded-chit-btn chit-yellow" data-chit="2" aria-label="Open Gold Love Note">
+              <div class="chit-crease-line"></div>
+              <div class="chit-crease-line"></div>
+            </button>
+          </div>
+
+          <!-- Bottom Navigation Matching Reference Screenshots -->
+          <div class="jar-bottom-nav">
+            <button class="btn-ivory-pill" id="btn-back-from-jar">
+              <span>BACK</span>
+            </button>
+            <button class="btn-burgundy-pill" id="btn-continue-from-jar">
+              <span>CONTINUE</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== PAGE 4: SPIN THE WHEEL (Reference Image 3 & Image 2) ==================== -->
+      <section class="page-screen" id="page-wheel">
+        <div class="page-inner text-center">
+          
+          <button class="round-nav-btn btn-back" id="btn-back-from-wheel" aria-label="Back">
+            <span>←</span>
+          </button>
+
+          <div class="pill-badge">
+            <span class="badge-heart">🎁</span>
+            <span class="badge-text">SPIN FOR YOUR GIFTS</span>
+          </div>
+
+          <h2 class="main-heading">
+            spin to win your gifts 🎁
+          </h2>
+
+          <p class="sub-italic-note">
+            every spin has a special surprise for you ♡
+          </p>
+
+          <!-- Interactive Wheel Assembly -->
+          <div class="wheel-assembly-container">
+            <!-- Top Pointer Triangle -->
+            <div class="wheel-pointer-triangle">▼</div>
+
+            <!-- Rotating Canvas Wheel -->
+            <div class="wheel-disc-wrapper" id="wheel-disc-wrapper">
+              <canvas id="wheel-canvas" width="360" height="360"></canvas>
+              <!-- Center Heart Pin -->
+              <div class="wheel-center-heart-pin">
+                <span>♡</span>
+              </div>
+            </div>
+
+            <!-- Spin Button -->
+            <button class="btn-gradient-pill btn-spin-trigger" id="btn-spin-wheel">
+              <span>SPIN IT 🌸</span>
+            </button>
+          </div>
+
+          <!-- Unlocked Gift / Reason Modal & Scroll Area -->
+          <div class="unlocked-result-sheet hidden" id="unlocked-result-sheet">
+            <div class="sheet-mini-tag">YOU UNLOCKED 🎀</div>
+            <div class="sheet-icon" id="unlocked-icon">🎤</div>
+            <h3 class="sheet-title" id="unlocked-title">A Song Sung Just For You</h3>
+            <p class="sheet-desc" id="unlocked-desc">
+              You choose any song you love, and I will sing it for you in private. Simple, sweet, and 100% dedicated to you.
+            </p>
+
+            <!-- Video/Audio Media Player Area if Boyfriend uploaded one -->
+            <div class="media-preview-box hidden" id="media-preview-box">
+              <video id="custom-video-player" controls class="custom-video hidden"></video>
+              <audio id="custom-audio-player" controls class="custom-audio hidden"></audio>
+            </div>
+
+            <div class="sheet-footer">
+              <span class="vow-note">Signed with love by your boyfriend ♡</span>
+            </div>
+
+            <div class="sheet-actions">
+              <button class="btn-light-chip" id="btn-spin-again">
+                <span>Spin Again ↺</span>
+              </button>
+              <button class="btn-gradient-pill" id="btn-goto-scratch">
+                <span>Next: Scratch Card Secret ✨</span>
+                <span class="btn-arrow">→</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="skip-wheel-row">
+            <button class="text-skip-btn" id="btn-skip-wheel">
+              <span>Proceed Ahead to Scratch Card ✨</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== PAGE 5: SCRATCH TO REVEAL (Exact Match to User's Uploaded Image) ==================== -->
+      <section class="page-screen" id="page-scratch">
+        <div class="page-inner text-center">
+          
+          <button class="round-nav-btn btn-back" id="btn-back-from-scratch" aria-label="Back">
+            <span>←</span>
+          </button>
+
+          <p class="cursive-eyebrow">
+            just between us — for <span class="gf-name-display">Jaaanu</span>
+          </p>
+
+          <div class="pill-badge">
+            <span class="badge-sparkle">✦</span>
+            <span class="badge-text">A SMALL SECRET FOR JAAANU</span>
+          </div>
+
+          <h2 class="main-heading">
+            scratch to reveal, <span class="gf-name-display">Jaaanu</span>
+          </h2>
+
+          <p class="sub-italic-note">
+            something I mean completely, <span class="gf-name-display">Jaaanu</span>. use your thumb.
+          </p>
+
+          <!-- Interactive Scratch Card Container -->
+          <div class="scratch-card-container" id="scratch-card-container">
+            <!-- Hidden Secret Layer Underneath -->
+            <div class="scratch-secret-content" id="scratch-secret-content">
+              <div class="secret-heart-glow">💖</div>
+              <div class="secret-text-wrapper">
+                <p class="secret-text" id="scratch-secret-text"></p>
+              </div>
+              <span class="secret-sign" id="scratch-secret-sign">Forever Yours ♡</span>
+            </div>
+
+            <!-- Scratch Canvas Surface on Top -->
+            <canvas id="scratch-canvas" class="scratch-canvas" width="365" height="295"></canvas>
+          </div>
+
+          <p class="cursive-note-bottom">
+            no take-backs, <span class="gf-name-display">Jaaanu</span>. it's official now.
+          </p>
+
+          <div class="scratch-footer-section">
+            <div class="up-next-tag">UP NEXT ↓</div>
+            <div class="one-last-text">one last thing for <span class="gf-name-display">Jaaanu</span> →</div>
+            
+            <button class="btn-blue-pill" id="btn-final-celebrate">
+              <span>ONE LAST THING FOR JAAANU →</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== FINALE CELEBRATION MODAL ==================== -->
+      <div class="modal-backdrop hidden" id="finale-modal" role="dialog" aria-modal="true">
+        <div class="finale-card-sheet text-center">
+          <span class="finale-emoji">🎉🎂💖</span>
+          <h2 class="finale-title">Happy Birthday, <span class="gf-name-display">Jaaanu</span>!</h2>
+          <p class="finale-message">
+            I hope you loved this little surprise. Thank you for making my life so beautiful every single day. Here’s to many more birthdays together! ♡
+          </p>
+          <div class="finale-button-row">
+            <button class="btn-gradient-pill" id="btn-fire-more-confetti">
+              <span>Celebrate More 🎊</span>
+            </button>
+            <button class="btn-light-chip" id="btn-restart-experience">
+              <span>Back To Beginning ↺</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== UNVEILED LOVE NOTE MODAL (FROM THE JAR) ==================== -->
+      <div class="modal-backdrop hidden" id="chit-unfold-modal" role="dialog" aria-modal="true">
+        <div class="unfolded-chit-sheet text-center" id="unfolded-chit-card">
+          <div class="chit-sheet-header">
+            <span class="chit-sheet-tag" id="chit-sheet-tag">A SWEET NOTE FOR JAAANU ♡</span>
+            <button class="btn-close-sheet" id="btn-close-chit-modal" aria-label="Close">&times;</button>
+          </div>
+          <h3 class="chit-sheet-title" id="chit-sheet-title">Why I Fell For You ♡</h3>
+          <div class="chit-sheet-divider">🌸 ✦ 🌸</div>
+          <p class="chit-sheet-body" id="chit-sheet-body">
+            From the very first moment your smile lit up my day, I knew you were special. You make the ordinary moments feel like pure magic, and your laugh is my sweetest medicine. I love you endlessly, Jaaanu.
+          </p>
+          <div class="chit-sheet-footer">
+            <span class="chit-sheet-sign">Forever Yours ♡</span>
+          </div>
+          <button class="btn-light-chip" id="btn-fold-back-chit">
+            <span>Put Note Back & Pick Another ↺</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Personalizer Modal Drawer -->
+    <div class="modal-backdrop hidden" id="customizer-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-panel-box">
+        <div class="modal-top-bar">
+          <h3 id="modal-title">✏️ Personalize For Jaaanu</h3>
+          <button class="btn-close-sheet" id="btn-close-modal" aria-label="Close">&times;</button>
+        </div>
+
+        <p class="modal-desc">
+          Customize her name, your letter text, balloon pop promise, 3 jar love notes, secret scratch message, or upload media!
+        </p>
+
+        <form id="customizer-form" class="modal-form-content">
+          <div class="input-field">
+            <label for="input-gf-name">Her Name:</label>
+            <input type="text" id="input-gf-name" class="styled-input" value="Jaaanu" />
+          </div>
+
+          <div class="input-field">
+            <label for="input-sender-name">Your Sign-off:</label>
+            <input type="text" id="input-sender-name" class="styled-input" value="Forever Yours ♡" />
+          </div>
+
+          <div class="input-field">
+            <label for="input-letter-body">Love Letter Body:</label>
+            <textarea id="input-letter-body" class="styled-textarea" rows="4"></textarea>
+          </div>
+
+          <div class="input-field">
+            <label for="input-cake-blessing">Cake Candle Wish Message:</label>
+            <textarea id="input-cake-blessing" class="styled-textarea" rows="3"></textarea>
+          </div>
+
+          <div class="input-field">
+            <label for="input-balloon-secret">Heart Balloon Pop Message:</label>
+            <textarea id="input-balloon-secret" class="styled-textarea" rows="3"></textarea>
+          </div>
+
+          <div class="input-field">
+            <label for="input-jar-note-1">Jar Note 1 (Pink Chit - e.g. Why I Fell For You):</label>
+            <textarea id="input-jar-note-1" class="styled-textarea" rows="3"></textarea>
+          </div>
+
+          <div class="input-field">
+            <label for="input-jar-note-2">Jar Note 2 (Peach Chit - e.g. Favourite Memory):</label>
+            <textarea id="input-jar-note-2" class="styled-textarea" rows="3"></textarea>
+          </div>
+
+          <div class="input-field">
+            <label for="input-jar-note-3">Jar Note 3 (Yellow Chit - e.g. Birthday Vow):</label>
+            <textarea id="input-jar-note-3" class="styled-textarea" rows="3"></textarea>
+          </div>
+
+          <div class="input-field">
+            <label for="input-scratch-secret">Secret Message Under Scratch Card:</label>
+            <textarea id="input-scratch-secret" class="styled-textarea" rows="3"></textarea>
+          </div>
+
+          <div class="input-field">
+            <label>Upload Photo 1 (Carousel 01):</label>
+            <input type="file" id="input-photo-1" accept="image/*" class="styled-file" />
+          </div>
+
+          <div class="input-field">
+            <label>Upload Photo 2 (Carousel 02):</label>
+            <input type="file" id="input-photo-2" accept="image/*" class="styled-file" />
+          </div>
+
+          <div class="input-field">
+            <label>Upload Photo 3 (Carousel 03):</label>
+            <input type="file" id="input-photo-3" accept="image/*" class="styled-file" />
+          </div>
+
+          <div class="input-field">
+            <label>Upload Funny Pictures (Goofy & Meme Archives 🤪):</label>
+            <input type="file" id="input-goofy-upload" accept="image/*" multiple class="styled-file" />
+          </div>
+
+          <div class="input-field">
+            <label>Upload Song Video / Audio (Plays when wheel lands on Song):</label>
+            <input type="file" id="input-custom-media" accept="video/*,audio/*" class="styled-file" />
+          </div>
+
+          <div class="modal-buttons-row">
+            <button type="button" class="btn-text-link" id="btn-reset-defaults">Reset Defaults</button>
+            <button type="submit" class="btn-gradient-pill">Save & Apply ♡</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ==================== PRIVATE SPACE PASSWORD AUTH MODAL ==================== -->
+    <div class="modal-backdrop hidden" id="vault-password-modal" role="dialog" aria-modal="true" aria-labelledby="vault-modal-title">
+      <div class="vault-auth-card text-center">
+        <button class="btn-close-sheet" id="btn-close-vault-auth" aria-label="Close">&times;</button>
+        
+        <div class="vault-lock-glow">
+          <span class="vault-lock-emoji">🔐</span>
+        </div>
+
+        <div class="pill-badge">
+          <span class="badge-heart">💖</span>
+          <span class="badge-text">RESTRICTED MEMORIES</span>
+        </div>
+
+        <h3 id="vault-modal-title" class="vault-auth-title">Our Private Space</h3>
+        
+        <p class="vault-auth-subtitle">
+          Enter our secret password to unlock private memories meant only for us ♡
+        </p>
+
+        <form id="vault-auth-form" class="vault-auth-form">
+          <div class="vault-input-group">
+            <input 
+              type="password" 
+              id="input-vault-password" 
+              class="styled-input vault-input" 
+              placeholder="Enter secret password..." 
+              autocomplete="off"
+              required 
+            />
+            <button type="button" class="btn-toggle-eye" id="btn-toggle-vault-eye" title="Show/Hide Password" aria-label="Toggle password visibility">
+              👁️
+            </button>
+          </div>
+
+          <div class="vault-auth-error hidden" id="vault-auth-error">
+            Oops! Wrong password 🙈 Only for you and me ♡
+          </div>
+
+          <div class="vault-auth-buttons">
+            <button type="submit" class="btn-gradient-pill btn-unlock-vault">
+              <span>UNLOCK PRIVATE SPACE ♡</span>
+            </button>
+          </div>
+
+          <p class="vault-hint-text">
+            Hint: <em>no space, all lowercase</em> ♡
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ==================== PRIVATE SPACE GALLERY WINDOW MODAL ==================== -->
+    <div class="modal-backdrop hidden" id="vault-gallery-modal" role="dialog" aria-modal="true" aria-labelledby="vault-gallery-title">
+      <div class="vault-gallery-card">
+        <div class="vault-gallery-header">
+          <div class="vault-title-group">
+            <div class="vault-badge-pill">
+              <span>🔐 PRIVATE VAULT</span>
+            </div>
+            <h3 id="vault-gallery-title" class="vault-header-title">Our Private Space ♡</h3>
+            <p class="vault-header-sub">Memories made just for the two of us. Sealed with pure love 💕</p>
+          </div>
+          <button class="btn-close-sheet" id="btn-close-vault-gallery" aria-label="Close">&times;</button>
+        </div>
+
+        <!-- Vault Actions Toolbar -->
+        <div class="vault-toolbar">
+          <label class="btn-gradient-pill btn-upload-vault" title="Upload a private memory">
+            <input type="file" id="input-vault-file-upload" accept="image/*,video/*" multiple hidden />
+            <span>📸 Add Photo / Video</span>
+          </label>
+          <button class="btn-light-chip btn-lock-vault-again" id="btn-lock-vault" title="Lock Private Space">
+            <span>🔒 Lock Vault</span>
+          </button>
+        </div>
+
+        <!-- Private Photos Gallery Grid -->
+        <div class="vault-photos-grid" id="vault-photos-grid">
+          <!-- Dynamic cards injected via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PRIVATE PHOTO LIGHTBOX MODAL ==================== -->
+    <div class="modal-backdrop hidden" id="vault-lightbox-modal" role="dialog" aria-modal="true">
+      <div class="vault-lightbox-card">
+        <button class="btn-close-sheet btn-lightbox-close" id="btn-close-vault-lightbox" aria-label="Close">&times;</button>
+        <div class="lightbox-image-box">
+          <img id="vault-lightbox-img" src="" alt="Private Memory" />
+          <video id="vault-lightbox-video" controls playsinline class="hidden" style="width: 100%; border-radius: 10px; max-height: 60vh;"></video>
+        </div>
+        <div class="lightbox-caption-box text-center">
+          <p class="lightbox-caption-text" id="vault-lightbox-caption"></p>
+          <span class="lightbox-date-tag" id="vault-lightbox-date"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== EDIT CAPTION MODAL ==================== -->
+    <div class="modal-backdrop hidden" id="caption-edit-modal" role="dialog" aria-modal="true" aria-labelledby="caption-modal-title">
+      <div class="caption-edit-card text-center">
+        <button class="btn-close-sheet" id="btn-close-caption-modal" aria-label="Close">&times;</button>
+        <div class="pill-badge">
+          <span class="badge-heart" id="caption-modal-badge-icon">✏️</span>
+          <span class="badge-text" id="caption-modal-badge-text">EDIT CAPTION</span>
+        </div>
+        <h3 id="caption-modal-title" class="caption-modal-title">Write A Sweet Caption</h3>
+        <p class="caption-modal-sub" id="caption-modal-sub">Add a sweet memory or note for this photo ♡</p>
+        
+        <form id="caption-edit-form">
+          <!-- Funny Tag Selector (Visible in Goofy Mode) -->
+          <div class="caption-tags-container hidden" id="caption-tags-container">
+            <label class="tag-picker-label">Pick A Funny Meme Tag:</label>
+            <div class="tag-chips-wrapper" id="tag-chips-wrapper">
+              <button type="button" class="tag-chip active" data-tag="Drama Queen 👑">👑 Drama Queen</button>
+              <button type="button" class="tag-chip" data-tag="Hangry Goblin 🍕">🍕 Hangry Goblin</button>
+              <button type="button" class="tag-chip" data-tag="Sleepy Dumpling 🥟">🥟 Sleepy Dumpling</button>
+              <button type="button" class="tag-chip" data-tag="Caught in 4K 📸">📸 Caught in 4K</button>
+              <button type="button" class="tag-chip" data-tag="Derp Face 🤪">🤪 Derp Face</button>
+              <button type="button" class="tag-chip" data-tag="Godzilla Mode 🦖">🦖 Godzilla Mode</button>
+            </div>
+            <input type="hidden" id="input-selected-photo-tag" value="Drama Queen 👑" />
+          </div>
+
+          <textarea id="input-edit-caption-text" class="styled-textarea" rows="3" placeholder="Write something sweet..."></textarea>
+          
+          <div class="caption-modal-buttons">
+            <button type="submit" class="btn-gradient-pill">Save Caption ♡</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ==================== RETRO PHOTOBOOTH FILM STRIP MODAL ==================== -->
+    <div class="modal-backdrop hidden" id="photobooth-strip-modal" role="dialog" aria-modal="true" aria-labelledby="photobooth-modal-title">
+      <div class="photobooth-modal-card">
+        <button class="btn-close-sheet" id="btn-close-photobooth" aria-label="Close">&times;</button>
+        
+        <div class="photobooth-inner-wrapper">
+          <div class="photobooth-film-strip" id="photobooth-film-strip">
+            <div class="photobooth-top-banner">
+              <span class="photobooth-hearts">♡ ♡ ♡</span>
+              <h4 id="photobooth-modal-title" class="photobooth-brand-title">JAAANU'S PHOTOBOOTH</h4>
+              <p class="photobooth-date">CERTIFIED CUTIE & DRAMA QUEEN ARCHIVES</p>
+            </div>
+
+            <!-- Vertical list of 4 funny photo frames -->
+            <div class="photobooth-frames-list" id="photobooth-frames-list">
+              <!-- Dynamically populated via JS -->
+            </div>
+
+            <div class="photobooth-bottom-banner">
+              <span class="photobooth-stamp">MADE WITH PURE LOVE ♡</span>
+              <span class="photobooth-barcode">|||| ||| ||||| || |||||| |||</span>
+            </div>
+          </div>
+
+          <div class="photobooth-actions">
+            <button type="button" class="btn-gradient-pill btn-close-photobooth-action" id="btn-close-photobooth-action">
+              <span>Back To Photos ♡</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  </body>
+</html>
